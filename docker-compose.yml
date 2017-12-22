@@ -3,7 +3,7 @@ version: "2"
 services:
 
   github-api:
-    image: databraiddb/github-api:latest
+    image: databraiddev/github-api:latest
     ports:
       - 8002:8002
     environment:
