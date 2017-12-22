@@ -44,16 +44,17 @@
     "build-module": "npm run build --prefix ./libs/widget-libs/",
     "create-module": "npm run install-module && npm run build-module"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "description":
+    "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/databraid-dashboard/databraid-react-starter.git"
+    "url": "git+https://github.com/databraid-dashboard/github-spa.git"
   },
-  "author": "joshwyatt",
+  "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/databraid-dashboard/databraid-react-starter/issues"
+    "url": "https://github.com/databraid-dashboard/github-spa/issues"
   },
-  "homepage": "https://github.com/databraid-dashboard/databraid-react-starter#readme"
+  "homepage": "https://github.com/databraid-dashboard/github-spa#readme"
 }
