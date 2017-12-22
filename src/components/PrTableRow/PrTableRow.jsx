@@ -17,9 +17,7 @@ const getMergeable = (able) => {
   if (able) {
     return <div />;
   } else if (able === false) {
-    return (
-      <Icon style={merge} name="remove" size="big" />
-    );
+    return <Icon style={merge} name="remove" size="big" />;
   }
   return <div />;
 };
@@ -36,26 +34,26 @@ export const PrTableRow = ({ created, mergeable, submittedBy, title }) => {
     fontSize: '16px',
   };
 
-  return (<Card.Content style={styles}>
-    <List divided relaxed>
-      <List.Item>
-        <List.Content className="ui center aligned">
-          <List.Header style={space}>
-            {title}
-          </List.Header>
-          <List.Description style={space}>
-            date created:
-            <Header sub>{moment(created).fromNow()}</Header>
-          </List.Description>
-          <List.Description style={space}>
-            submitted by:
-            <Header sub>{submittedBy}</Header>
-            {getMergeable(mergeable)}
-          </List.Description>
-        </List.Content>
-      </List.Item>
-    </List>
-  </Card.Content>);
+  return (
+    <Card.Content style={styles}>
+      <List divided relaxed>
+        <List.Item>
+          <List.Content className="ui center aligned">
+            <List.Header style={space}>{title}</List.Header>
+            <List.Description style={space}>
+              date created:
+              <Header sub>{moment(created).fromNow()}</Header>
+            </List.Description>
+            <List.Description style={space}>
+              submitted by:
+              <Header sub>{submittedBy}</Header>
+              {getMergeable(mergeable)}
+            </List.Description>
+          </List.Content>
+        </List.Item>
+      </List>
+    </Card.Content>
+  );
 };
 
 PrTableRow.propTypes = {

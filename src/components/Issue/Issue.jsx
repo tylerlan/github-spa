@@ -44,7 +44,8 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
       <Label className="ui medium label" ribbon="right" color="grey">
         {label}
       </Label>
-    </div>));
+    </div>
+  ));
 
   return (
     <Card.Content style={styles}>
@@ -52,16 +53,15 @@ export const Issue = ({ title, number, assignedTo, labels }) => {
         <List.Item>
           <List.Content>
             <List.Header style={readable}>
-            #{number} {title}
+              #{number} {title}
             </List.Header>
             {renderedLabels}
-            <List.Description style={padRead}>
-              {' '}{getDescription(assignedTo)}
-            </List.Description>
+            <List.Description style={padRead}> {getDescription(assignedTo)}</List.Description>
           </List.Content>
         </List.Item>
       </List>
-    </Card.Content>);
+    </Card.Content>
+  );
 };
 
 Issue.propTypes = {

@@ -32,9 +32,7 @@ export class Organizations extends Component {
             <Icon name="github" />
             <Header.Content>Which organization are you interested in?</Header.Content>
           </Header>
-          <Grid.Row>
-            {orgComponents(this.props.orgIds)}
-          </Grid.Row>
+          <Grid.Row>{orgComponents(this.props.orgIds)}</Grid.Row>
         </Grid>
       </div>
     );
@@ -66,8 +64,11 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    retrieveOrgs,
-  }, dispatch);
+  bindActionCreators(
+    {
+      retrieveOrgs,
+    },
+    dispatch,
+  );
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Organizations));

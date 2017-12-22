@@ -15,13 +15,15 @@ export const triggerLogout = (logout) => {
 
 export const Logout = ({ logout }) => (
   /* eslint-enable */
-  <Grid verticalAlign={'top'} >
-    <Grid.Row >
+  <Grid verticalAlign={'top'}>
+    <Grid.Row>
       <Grid.Column verticalAlign={'middle'}>
         <Card.Content>
           <Button
             as="a"
-            onClick={() => { triggerLogout(logout); }}
+            onClick={() => {
+              triggerLogout(logout);
+            }}
             className="hand peace icon"
             size="medium"
             content="Logout"
@@ -31,15 +33,18 @@ export const Logout = ({ logout }) => (
       </Grid.Column>
     </Grid.Row>
   </Grid>
-  );
-
+);
 
 Logout.propTypes = {
   /* eslint-disable react/no-unused-prop-types, react/require-default-props */
   logout: PropTypes.func.isRequired,
 };
-export const mapDispatchToProps = dispatch => bindActionCreators({
-  logout,
-}, dispatch);
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      logout,
+    },
+    dispatch,
+  );
 
 export default connect(null, mapDispatchToProps)(Logout);

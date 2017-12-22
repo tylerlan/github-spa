@@ -39,15 +39,23 @@ export class PrTable extends Component {
     }
 
     if (!Object.keys(this.props.prsByRepo).length) {
-      return (<Card style={styles}><Card.Content style={height}>
-        <Card.Header style={titles} className="ui center aligned">No Pull Requests!</Card.Header>
-      </Card.Content></Card>);
+      return (
+        <Card style={styles}>
+          <Card.Content style={height}>
+            <Card.Header style={titles} className="ui center aligned">
+              No Pull Requests!
+            </Card.Header>
+          </Card.Content>
+        </Card>
+      );
     }
 
     return (
       <Card style={styles}>
         <Card.Content style={height}>
-          <Card.Header style={titles} className="ui center aligned">Pull Requests</Card.Header>
+          <Card.Header style={titles} className="ui center aligned">
+            Pull Requests
+          </Card.Header>
         </Card.Content>
         {prComponents(this.props.prsByRepo, this.props.repoName)}
       </Card>
@@ -90,8 +98,11 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    retrievePrs,
-  }, dispatch);
+  bindActionCreators(
+    {
+      retrievePrs,
+    },
+    dispatch,
+  );
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(PrTable));

@@ -40,7 +40,9 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
     }
     return (
       <div>
-        <Header sub style={space}>Date Due: </Header>
+        <Header sub style={space}>
+          Date Due:{' '}
+        </Header>
         {convertDate(date)}
       </div>
     );
@@ -51,11 +53,11 @@ export const Milestone = ({ title, due, percentComplete, milestoneId }) => {
       <List divided relaxed>
         <List.Item>
           <List.Content className="ui center aligned">
-            <List.Header style={read}>
-              {title}
-            </List.Header>
+            <List.Header style={read}>{title}</List.Header>
             {getDueDate(due)}
-            <Header sub style={space}>Percent Complete: </Header>
+            <Header sub style={space}>
+              Percent Complete:{' '}
+            </Header>
             <ProgressArc
               milestoneId={milestoneId}
               percentComplete={percentComplete}

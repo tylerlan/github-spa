@@ -28,13 +28,17 @@ class ProgressArc extends Component {
   }
 
   arc() {
-    return d3.arc().innerRadius(20).outerRadius(30).startAngle(0);
+    return d3
+      .arc()
+      .innerRadius(20)
+      .outerRadius(30)
+      .startAngle(0);
   }
 
   setBackground(context) {
     return context
       .append('path')
-      .datum({ endAngle: (Math.PI * 2) })
+      .datum({ endAngle: Math.PI * 2 })
       .style('fill', '#e6e6e6')
       .attr('d', this.arc());
   }
@@ -64,7 +68,7 @@ class ProgressArc extends Component {
     return this.setForeground(context)
       .transition()
       .duration(this.props.duration)
-      .call(this.arcTween, (Math.PI * 2) * this.props.percentComplete, this.arc());
+      .call(this.arcTween, Math.PI * 2 * this.props.percentComplete, this.arc());
   }
 
   arcTween(transition, newAngle, arc) {

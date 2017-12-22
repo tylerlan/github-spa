@@ -84,9 +84,12 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    retrieveRepos,
-    displayOrgs,
-  }, dispatch);
+  bindActionCreators(
+    {
+      retrieveRepos,
+      displayOrgs,
+    },
+    dispatch,
+  );
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(RepoList));

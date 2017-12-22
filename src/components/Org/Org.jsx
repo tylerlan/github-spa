@@ -19,7 +19,8 @@ export const Org = ({ avatarUrl, orgName, displayRepos }) => (
     <List.Item as="a" className="hoverable" onClick={() => displayRepos(orgName)}>
       {orgName}
     </List.Item>
-  </Grid.Column>);
+  </Grid.Column>
+);
 
 Org.propTypes = {
   avatarUrl: PropTypes.string.isRequired,
@@ -40,8 +41,11 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    displayRepos,
-  }, dispatch);
+  bindActionCreators(
+    {
+      displayRepos,
+    },
+    dispatch,
+  );
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Org));

@@ -8,10 +8,11 @@ import { displayDashboard } from '../../actions/renderActions';
 import injectWidgetId from '../../utils/utils';
 import './Repo.css';
 
-export const Repo = ({ repoName, displayDashboard }) =>
-  (<List.Item as="a" className="hoverable" id="repo" onClick={() => displayDashboard(repoName)}>
+export const Repo = ({ repoName, displayDashboard }) => (
+  <List.Item as="a" className="hoverable" id="repo" onClick={() => displayDashboard(repoName)}>
     {repoName}
-  </List.Item>);
+  </List.Item>
+);
 
 Repo.propTypes = {
   repoName: PropTypes.string.isRequired,
@@ -30,8 +31,11 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    displayDashboard,
-  }, dispatch);
+  bindActionCreators(
+    {
+      displayDashboard,
+    },
+    dispatch,
+  );
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Repo));

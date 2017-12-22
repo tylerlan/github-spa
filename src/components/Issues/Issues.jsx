@@ -17,7 +17,6 @@ function issueComponents(issues, repo) {
 }
 
 export class Issues extends Component {
-
   componentDidMount() {
     this.props.retrieveIssues(this.props.userName, this.props.orgName, this.props.repoName);
   }
@@ -40,16 +39,22 @@ export class Issues extends Component {
     }
 
     if (!Object.keys(this.props.issuesByRepo).length) {
-      return (<Card style={styles}><Card.Content style={height}>
-        <Card.Header style={titles} className="ui center aligned">No Issues!</Card.Header>
-      </Card.Content></Card>);
+      return (
+        <Card style={styles}>
+          <Card.Content style={height}>
+            <Card.Header style={titles} className="ui center aligned">
+              No Issues!
+            </Card.Header>
+          </Card.Content>
+        </Card>
+      );
     }
 
     return (
       <Card style={styles}>
         <Card.Content style={height}>
           <Card.Header style={titles} className="ui center aligned">
-              Issues
+            Issues
           </Card.Header>
         </Card.Content>
         {issueComponents(this.props.issuesByRepo, this.props.repoName)}
@@ -90,8 +95,11 @@ export const mapStateToProps = (state, ownProps) => {
 };
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    retrieveIssues,
-  }, dispatch);
+  bindActionCreators(
+    {
+      retrieveIssues,
+    },
+    dispatch,
+  );
 
 export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(Issues));
